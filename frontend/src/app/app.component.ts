@@ -34,7 +34,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    console.log('rt es ', this.rt);
+    console.log('rt es ', this.rt.connection.authenticated);
     console.log('client sub es ', this.clientSub);
     if ( this.rt.connection.isConnected() && this.rt.connection.authenticated ) {
         this.rt.onReady().subscribe(() => this.setup());

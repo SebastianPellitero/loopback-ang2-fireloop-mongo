@@ -28,7 +28,7 @@ import { User, AccessToken, UserApi } from '../../shared/sdk';
     <input type="password" name="password" [(ngModel)]="user.password"/>
     <button>Enter</button>
   </form>
-  <button submit="logout()">
+  <button submit="logout()">Papapa</button>
 `
 })
 export class UserComponent {
@@ -39,12 +39,13 @@ export class UserComponent {
 
   login(): void {
     this.userApi.login(this.user).subscribe(
-      (token: AccessToken) => {console.log(token),console.log(this.userApi)},
+      (token: AccessToken) => {console.log(token),console.log(this.user)},
       (err) => console.log(err)
     );
   }
 
-  logout() {
-    this.userApi.logout();
+  logout(): void {
+    this.userApi.logout().subscribe();
+    console.log(this.user);
   }
 }
