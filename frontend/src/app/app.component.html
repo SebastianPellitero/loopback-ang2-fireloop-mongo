@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1>
+  {{title}}
+</h1>
+
+<app-login></app-login>
+
+<form (submit)="add()">
+  <input type="text" name="population" [(ngModel)]="population.country" placeholder="Add population" />
+  <input type="text" name="number" [(ngModel)]="population.population" placeholder="Add number" />
+  <button>Add</button>
+</form>
+
+<ul>
+  <li *ngFor="let population of populations">
+    Country Name: {{population.country}}
+    Population: {{population.population}}
+    <input type="text" name="population" [(ngModel)]="population.country" />
+    <button (click)="update(population)">update</button>
+    <button (click)="remove(population)">remove</button>
+  </li>
+</ul>
